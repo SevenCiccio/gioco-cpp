@@ -123,32 +123,38 @@ void scelta_colore_pelle_personaggio()
         cout << "|---------------------------------------------------------|" << endl;
         cout << endl;
         cout << "|-----------------------|" << endl;
-        cout << "| 1. Chiara             |" << endl;
+        cout << "| 1. Bianco             |" << endl;
         cout << "|                       |" << endl;
-        cout << "| 2. Nordica            |" << endl;
+        colorText(9);
+        cout << "| 2. Blu chiaro         |" << endl;
+        colorText(7);
         cout << "|                       |" << endl;
-        cout << "| 3. Scura              |" << endl;
+        colorText(4);
+        cout << "| 3. Rosso              |" << endl;
+        colorText(7);
         cout << "|                       |" << endl;
-        cout << "| 4. Molto Scura        |" << endl;
+        colorText(2);
+        cout << "| 4. Verde              |" << endl;
+        colorText(7);
         cout << "|-----------------------|" << endl;
         cout << "inserire scelta: ";
         cin >> scelta_colore_pelle;
         switch (scelta_colore_pelle)
         {
         case 1:
-            p1.colore_pelle = "Chiara";
+            p1.colore_pelle = "Bianco";
             break;
 
         case 2:
-            p1.colore_pelle = "Nordica";
+            p1.colore_pelle = "Blu chiaro";
             break;
 
         case 3:
-            p1.colore_pelle = "Scura";
+            p1.colore_pelle = "Rosso";
             break;
 
         case 4:
-            p1.colore_pelle = "Molto scura";
+            p1.colore_pelle = "Verde";
             break;
         }
         cout << "Hai scelto la tonalita' della pelle " << p1.colore_pelle << ", confermi la scelta? y/n: ";
@@ -156,7 +162,35 @@ void scelta_colore_pelle_personaggio()
         cin.ignore();
     } while (tolower(conferma_colore_pelle) == 'n');
 
-    cout << "\nscelta confermata, la tonalita' della pelle e': " << p1.colore_pelle;
+    if (p1.colore_pelle == "Bianco")
+    {
+        cout << "\nscelta confermata, la tonalita' della pelle e': ";
+        colorText(7);
+        cout << p1.colore_pelle;
+        colorText(7);
+    }
+    else if (p1.colore_pelle == "Blu chiaro")
+    {
+        cout << "\nscelta confermata, la tonalita' della pelle e': ";
+        colorText(9);
+        cout << p1.colore_pelle;
+        colorText(7);
+    }
+    else if (p1.colore_pelle == "Rosso")
+    {
+        cout << "\nscelta confermata, la tonalita' della pelle e': ";
+        colorText(4);
+        cout << p1.colore_pelle;
+        colorText(7);
+    }
+    else if (p1.colore_pelle == "Verde")
+    {
+        cout << "\nscelta confermata, la tonalita' della pelle e': ";
+        colorText(2);
+        cout << p1.colore_pelle;
+        colorText(7);
+    }
+
     cout << "\nVuoi passare alla scelta della classe? (y/n) : ";
     cin >> classe_step_successivo;
     if (tolower(classe_step_successivo) == 'y')
