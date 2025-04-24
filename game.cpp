@@ -2,6 +2,8 @@
 #include <cmath>
 #include <windows.h>
 #include <string>
+#include <algorithm>
+#include <cctype>
 
 using namespace std;
 
@@ -78,21 +80,24 @@ void scelta_nome_personaggio()
     cout << "| Benvenuto nella creazione del tuo personaggio |" << endl;
     cout << "|-----------------------------------------------|" << endl;
     cout << endl;
-    cout << "| Inserisci il nome del tuo personaggio: ";
-    getline(cin, p1.nome);
+    do
+    {
+        cout << "| Inserisci il nome del tuo personaggio: ";
+        getline(cin, p1.nome);
+    } while (p1.nome == "" or p1.nome == " ");
 
-    cout << "\nIl nome del tuo personaggio e' " << " | " << p1.nome << endl
+    cout << "\nIl nome del tuo personaggio e' " << "| " << p1.nome << " |" << endl
          << "vuoi davvero mantenere questo nome? y/n :";
     cin >> conferma_nome_personaggio;
     cin.ignore();
 
     while (tolower(conferma_nome_personaggio) == 'n')
     {
-        cin.ignore();
         cout << "Inserisci il nuovo nome del personaggio: ";
         getline(cin, p1.nome);
         cout << "vuoi davvero mantenere questo nome? y/n: ";
         cin >> conferma_nome_personaggio;
+        cin.ignore();
     }
 
     cout << "\nScelta confermata, il nome del tuo personaggio e': " << p1.nome;
