@@ -2,8 +2,6 @@
 #include <cmath>
 #include <windows.h>
 #include <string>
-#include <algorithm>
-#include <cctype>
 
 using namespace std;
 
